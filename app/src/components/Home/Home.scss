@@ -1,0 +1,33 @@
+/* Home/WhoAmI.scss */
+
+.whoami-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.whoami-terminal-cursor::after {
+  content: "|";
+  animation: whoami-blink 1s infinite;
+  color: #00ff41;
+}
+
+@keyframes whoami-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.whoami-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.whoami-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
