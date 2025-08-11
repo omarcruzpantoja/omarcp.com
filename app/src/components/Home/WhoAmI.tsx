@@ -15,7 +15,7 @@ const WhoAmI = (): JSX.Element => {
           <div>
             Specializing in scalable systems, APIs, and database architecture
           </div>
-          <div className="mt-2">Python | Go | PostgreSQL | Redis | Docker</div>
+          <div className="mt-2">Python | Go | PostgreSQL | Docker</div>
         </div>
         <div className="flex items-center justify-center gap-6">
           <a
@@ -29,6 +29,13 @@ const WhoAmI = (): JSX.Element => {
             className="border border-terminal-green text-terminal-green px-8 py-3 rounded hover:bg-terminal-green hover:text-black transition-all"
           >
             About
+          </a>
+          <a
+            href="https://raw.githubusercontent.com/omarcruzpantoja/omarcruzpantoja.github.io/refs/heads/master/omar_LATEST_Resume.pdf"
+            download
+            className="border border-terminal-green text-terminal-green px-8 py-3 rounded hover:bg-terminal-green hover:text-black transition-all"
+          >
+            Resume
           </a>
         </div>
       </div>

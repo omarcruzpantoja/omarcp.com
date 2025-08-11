@@ -27,7 +27,6 @@ const Nav = (): JSX.Element => {
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="#about">about</NavLink>
-            <NavLink href="#experience">experience</NavLink>
             <NavLink href="#projects">projects</NavLink>
             <NavLink href="#contact">contact</NavLink>
           </div>
