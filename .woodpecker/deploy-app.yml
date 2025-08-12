@@ -1,0 +1,38 @@
+when:
+  - event: [manual]
+  - branch: [main]
+
+steps:
+  - name: Fetch and Initialize Credentials
+    image: registry.mist-project.app/mist-shared/alpine-ci:latest
+    environment:
+      OP_SERVICE_ACCOUNT_TOKEN:
+        from_secret: OP_TOKEN
+      OP_VAULT:
+        from_secret: OP_VAULT
+      TENANT_ACCOUNT_ID:
+        from_secret: TENANT_ACCOUNT_ID
+
+    commands:
+      - chmod +x helpers/fetch_creds_op.sh
+      - ./helpers/fetch_creds_op.sh
+
+  - name: Build react app
+    image: node:20-alpine
+
+    commands:
+      - cd app
+      - npm ci
+      - npm run build
+
+  - name: Deploy app to nginx server
+    image: registry.mist-project.app/mist-shared/alpine-ci:latest
+    environment:
+      ANSIBLE_HOST_KEY_CHECKING: False
+    commands:
+      - source .tmpenvs
+      - |
+        ansible-playbook -i ansible/inventory/hosts.ini \
+          ansible/playbooks/deploy.yml \
+          --extra-vars "ansible_ssh_private_key_file=key.pem" \
+          --extra-vars "ansible_user=$TENANT_USERNAME" \
