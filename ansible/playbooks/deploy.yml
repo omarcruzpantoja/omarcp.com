@@ -1,0 +1,29 @@
+---
+- name: Deploy React build to Nginx server
+  hosts: nginx-server
+  become: yes
+  vars:
+    local_build_dir: "../../app/dist"
+    remote_web_root: "/var/www/omarcp"
+
+  tasks:
+    - name: Remove existing site files
+      file:
+        path: "{{ remote_web_root }}"
+        state: absent
+
+    - name: Ensure web root exists
+      file:
+        path: "{{ remote_web_root }}"
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0755"
+
+    - name: Copy new build files
+      copy:
+        src: "{{ local_build_dir }}/"
+        dest: "{{ remote_web_root }}/"
+        owner: www-data
+        group: www-data
+        mode: "0644"
