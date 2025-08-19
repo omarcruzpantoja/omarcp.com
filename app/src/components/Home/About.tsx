@@ -13,7 +13,7 @@ const About = (): JSX.Element => {
     <section id="about" className="py-20 px-6">
       <div className="max-w-4xl mx-auto fade-in">
         <h3 className="text-3xl font-bold mb-8 text-terminal-green font-mono">
-          $ cat about.txt
+          cat about.txt
         </h3>
         <div className="bg-card-bg p-8 rounded-lg border border-border-gray">
           <div className="flex flex-col md:flex-row gap-8">

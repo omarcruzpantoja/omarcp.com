@@ -4,7 +4,7 @@ const WhoAmI = (): JSX.Element => {
   return (
     <section className="min-h-screen flex items-center justify-center px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="font-mono text-terminal-green mb-4">$ whoami</div>
+        <div className="font-mono text-terminal-green mb-4">whoami</div>
         <h1 className="text-5xl md:text-\6xl font-bold mb-6 whoami-terminal-cursor">
           Omar Cruz Pantoja
         </h1>

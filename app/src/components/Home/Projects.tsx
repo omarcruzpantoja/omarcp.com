@@ -86,7 +86,7 @@ const Projects = (): JSX.Element => {
     <section id="projects" className="py-20 px-6">
       <div className="max-w-6xl mx-auto fade-in">
         <h3 className="text-3xl font-bold mb-8 text-terminal-green font-mono">
-          $ ls projects/
+          ls projects/
         </h3>
         <div className="flex flex-wrap -mx-3">
           <ProjectDescription

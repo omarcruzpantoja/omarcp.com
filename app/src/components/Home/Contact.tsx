@@ -25,7 +25,7 @@ const Contact = (): JSX.Element => {
     <section id="contact" className="py-20 px-6 bg-card-bg/30">
       <div className="max-w-4xl mx-auto text-center fade-in">
         <h3 className="text-3xl font-bold mb-6 text-terminal-green font-mono">
-          $ contact --help
+          contact --help
         </h3>
 
         {/* Contact block */}
