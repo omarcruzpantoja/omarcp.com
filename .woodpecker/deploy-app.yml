@@ -21,6 +21,9 @@ steps:
       - ./helpers/fetch_creds_op.sh
 
   - name: Build react app
+    when:
+      - event: [push, manual]
+      - branch: [main]
     image: node:20-alpine
 
     commands:
