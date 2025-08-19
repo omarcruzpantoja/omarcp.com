@@ -47,6 +47,7 @@ const ProjectDescription = ({
                 href={externalLink}
                 className="text-gray-400 hover:text-terminal-green transition-colors"
                 aria-label="External link"
+                target="_blank"
               >
                 <svg
                   className="w-5 h-5"
@@ -113,6 +114,16 @@ and scalable services.`}
               "Nginx",
             ]}
             githubLink="https://github.com/mist-project"
+            externalLink="https://mist-project.app"
+          />
+
+          <ProjectDescription
+            title="omarcp.com"
+            description={`omarcp.com is a personal portfolio website showcasing my projects, skills, and experience
+              as a backend developer.
+              Note: This project is the website you're currently viewing. :)`}
+            technologies={["React", "TypeScript", "Tailwind CSS", "Vite"]}
+            githubLink="https://github.com/omarcruzpantoja/omarcp.com"
           />
         </div>
       </div>
